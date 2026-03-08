@@ -10,7 +10,7 @@ export default function Navbar() {
                         </div>
                         <div className="nav-link-wrap">
                             <div className="link-block-wrap border-r">
-                                <a href="/all-categories-products" className="links w-inline-block">
+                                <a href="/category" className="links w-inline-block">
                                     <div className="link-text">Shop</div>
                                     <div className="link-text">Shop</div>
                                 </a>

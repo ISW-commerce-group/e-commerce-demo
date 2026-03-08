@@ -30,7 +30,7 @@ export default function CategoryPage({ params }: Props) {
                 >
                 <div className="content">
                     <h1 className="text-white z_index-1">
-                    {params.slug.replace("-", " ")}
+                        {(Array.isArray(params?.slug) ? params.slug.join('/') : params?.slug ?? '').replace(/-/g, ' ')}
                     </h1>
                 </div>
                 </div>
