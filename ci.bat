@@ -4,36 +4,40 @@ echo ==============================
 echo STARTING CI PIPELINE
 echo ==============================
 
-echo.
-echo Executing unit tests for frontend...
+REM ==============================
+REM FRONTEND
+REM ==============================
 
+echo.
+echo Installing frontend dependencies...
 pushd frontend
+call npm install
+
+echo.
+echo Running frontend unit tests...
 call npm test
-
 if errorlevel 1 (
     popd
     echo.
-    echo Unit tests failed. Pipeline stopped.
+    echo Frontend unit tests failed. Pipeline stopped.
     exit /b 1
 )
 
-popd
-
 echo.
-echo Executing ESLint for frontend...
-
-pushd frontend
+echo Running ESLint for frontend...
 call node_modules\.bin\eslint.cmd src
-
 if errorlevel 1 (
     popd
     echo.
-    echo Problems detected in frontend. Pipeline stopped.
+    echo ESLint detected problems in frontend. Pipeline stopped.
     exit /b 1
 )
 
 popd
 
 echo.
-echo Pipeline executed successfully.
+echo ==============================
+echo PIPELINE EXECUTED SUCCESSFULLY
+echo ==============================
+
 exit /b 0
