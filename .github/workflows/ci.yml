@@ -58,12 +58,8 @@ jobs:
         run: npx eslint src
 
       # -------------------------------------------------------
-      # Etapa 6. SonarQube Cloud Scan
+      # Etapa 6. SonarQube Cloud
+      # El análisis es gestionado por SonarQube Automatic Analysis.
+      # Para usar CI Analysis (y enviar cobertura), se requiere
+      # deshabilitar Automatic Analysis desde Administration > Automatic Analysis.
       # -------------------------------------------------------
-      - name: SonarQube Cloud Scan
-        uses: SonarSource/sonarcloud-github-action@v3
-        with:
-          projectBaseDir: frontend
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
