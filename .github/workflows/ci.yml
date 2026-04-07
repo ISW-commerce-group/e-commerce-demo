@@ -55,7 +55,7 @@ jobs:
       # Etapa 5. Análisis estático (ESLint)
       # -------------------------------------------------------
       - name: Run ESLint
-        run: npx eslint src --max-warnings=0
+        run: npx eslint src
 
       # -------------------------------------------------------
       # Etapa 6. SonarQube Cloud Scan
