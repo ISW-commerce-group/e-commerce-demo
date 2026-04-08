@@ -3,6 +3,7 @@ import Image from "next/image";
 export default function Footer() {
     return ( 
 <div>
+{/*cambio de prueba*/}
             <div className="container grid-footer">
                 <div id="w-node-e224ee31-0292-9c87-8851-6edd6b8989e9-6b8989e7" className="footer_column">
                     <p className="margin-bottom-24px">Remember to offer beautiful flowers from Kyiv Florist Studio Valentines Day, Mothers Day, Christmas... Reminds you 7 days before. No spam or sharing your address</p>
