@@ -5,7 +5,7 @@ import { Category } from "@/types/category"
 export const categories: Category[] = [
     {
         id: "1",
-        name: "Fresh Flowers",
+        name: ,
         slug: "fresh-flowers",
         image:
         "https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f83e04baa8bd18fe1321_point-du-jour%202%20copy.webp",
