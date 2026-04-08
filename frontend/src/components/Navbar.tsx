@@ -2,7 +2,6 @@ import Image from "next/image";
 
 export default function Navbar() {
     return (  
-{/*cambio de prueba*/}
         <div data-animation="default" className="navbar w-nav" data-easing2="ease" data-easing="ease-out-quad" data-collapse="medium" data-w-id="1b309e62-2a86-72e0-aae5-5cd901897a53" role="banner" data-duration="400" data-doc-height="1">
                 <div className="nav-content-grid">
                     <div className="nav-link-left">
