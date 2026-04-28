@@ -134,7 +134,7 @@ export interface CreateProductoDTO {
   stock_minimo?: number;
 }
 
-export interface UpdateProductoDTO extends Partial<CreateProductoDTO> {}
+export type UpdateProductoDTO = Partial<CreateProductoDTO>;
 
 export interface CreatePedidoDTO {
   tipo_entrega: TipoEntrega;
