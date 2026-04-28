@@ -100,11 +100,19 @@ export default function Navbar() {
             {menuOpen && (
                 <div
                     id="nav-mobile-overlay"
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Cerrar menú"
                     className="nav-mobile-overlay"
+                    onKeyDown={(e) => {
+                        if (e.key === 'Escape' || e.key === 'Enter') {
+                            setMenuOpen(false);
+                        }
+                    }}
                     onClick={(e) => {
                         if (e.target === e.currentTarget) setMenuOpen(false);
                     }}
-                >
+                            >
                     <nav className="nav-mobile-drawer" aria-label="Mobile navigation">
                         {/* Primary links */}
                         <Link

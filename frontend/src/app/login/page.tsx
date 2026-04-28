@@ -30,7 +30,7 @@ export default function LoginPage() {
             {/* Decorative quote */}
             <div className="login-quote">
               <p className="login-quote__text">
-                "A single flower can say what a thousand words cannot."
+                &quot;A single flower can say what a thousand words cannot.&quot;
               </p>
               <span className="login-quote__author overline">— Kyiv Luxe</span>
             </div>
