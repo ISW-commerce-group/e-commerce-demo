@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  Komodo_db:
+    image: mysql:8.0
+    container_name: Komodo_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: DEHG1186023
+      MYSQL_DATABASE: Komodo_db
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql #guardamos los datos de mysql en un volumen para que no se pierdan al reiniciar el contenedor
+      
