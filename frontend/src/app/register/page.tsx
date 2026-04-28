@@ -60,7 +60,7 @@ export default function RegisterPage() {
             {/* Decorative quote */}
             <div className="login-quote">
               <p className="login-quote__text">
-                "Where every petal tells a story of love and elegance."
+                &quot;Where every petal tells a story of love and elegance.&quot;
               </p>
               <span className="login-quote__author overline">— Kyiv Luxe</span>
             </div>
