@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-
+app.disable('x-powered-by');
 const userRoutes = require('./routes/userRoutes');
 const errorHandler = require('./middleware/errorMiddleware.js');
 

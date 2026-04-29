@@ -1,10 +1,11 @@
 const UserModel = require('../models/userModel');
+const validator = require('validator');
 
 class UserService {
 
     static validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+        if (typeof email !== 'string' || email.length > 254) return false;
+        return validator.isEmail(email);
     }
 
     static async getAllUsers(searchQuery) {
