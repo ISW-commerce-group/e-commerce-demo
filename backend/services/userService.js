@@ -7,13 +7,24 @@ class UserService {
         return emailRegex.test(email);
     }
 
-    static async getAllUsers() {
-        try {
-            return await UserModel.getAllUsers();
-        } catch (error) {
-            throw new Error('Error fetching users: ' + error.message);
+    static async getAllUsers(searchQuery) {
+    try {
+        // 1. Defensa: Si el input es muy largo, lo rechazamos
+        if (searchQuery && searchQuery.length > 100) {
+            throw new Error('Input demasiado largo');
         }
+
+        // 2. Usar una regex más atómica
+        const safeRegex = /^[a-z0-9]+$/i; 
+        if (searchQuery && !safeRegex.test(searchQuery)) {
+             throw new Error('Formato inválido');
+        }
+
+        return UserModel.getAllUsers(searchQuery);
+    } catch (error) {
+        throw new Error('Error fetching users: ' + error.message);
     }
+}
 
     static async getUserById(id) {
         try {
