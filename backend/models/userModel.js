@@ -1,32 +1,43 @@
 const db = require('../db');
 
+const baseFields = ['id', 'nombre', 'apellido', 'email', 'rol_id', 'telefono', 'activo'];
+
 class UserModel {
+
+    static baseQuery() {
+        return db('users').select(baseFields);
+    }
+
     static async getAllUsers() {
-        return db('users').select('*');
-    }   
+        return this.baseQuery();
+    }
 
     static async getUserById(id) {
-        return db('users').where({ id }).select('*').first();
+        return this.baseQuery().where({ id }).first();
     }
 
     static async getUserByEmail(email) {
-        return db('users').where({ email }).select('*').first();
+        return this.baseQuery().where({ email }).first();
     }
 
     static async createUser(user) {
-        const [id] = await db('users').insert({
-            nombre: user.nombre,
-            apellido: user.apellido,
-            rol_id: user.rol_id,
-            email: user.email,
-            password_hash: user.password_hash,
-            telefono: user.telefono
-        });
-        return this.getUserById(id);
+        const [newUser] = await db('users')
+            .insert({
+                nombre: user.nombre,
+                apellido: user.apellido,
+                rol_id: user.rol_id,
+                email: user.email,
+                password_hash: user.password_hash,
+                telefono: user.telefono
+            })
+            .returning(baseFields);
+
+        return newUser;
     }
 
     static async updateUser(id, user) {
         const updateData = {};
+
         if (user.nombre !== undefined) updateData.nombre = user.nombre;
         if (user.apellido !== undefined) updateData.apellido = user.apellido;
         if (user.rol_id !== undefined) updateData.rol_id = user.rol_id;
@@ -35,19 +46,23 @@ class UserModel {
         if (user.telefono !== undefined) updateData.telefono = user.telefono;
         if (user.activo !== undefined) updateData.activo = user.activo;
 
-        const affectedRows = await db('users').where({ id }).update(updateData);
-        if (affectedRows === 0) {
-            throw new Error('User not found');
-        }
+        const [updatedUser] = await db('users')
+            .where({ id })
+            .update(updateData)
+            .returning(baseFields);
 
-        return this.getUserById(id);
-        return affectedRows > 0;
-        
+        return updatedUser || null;
     }
 
     static async deleteUser(id) {
-        const affectedRows = await db('users').where({ id }).del();
-        return affectedRows > 0;
+        // 🔹 Soft delete recomendado
+        const [updatedUser] = await db('users')
+            .where({ id })
+            .update({ activo: false })
+            .returning(baseFields);
+
+        return updatedUser || null;
     }
 }
+
 module.exports = UserModel;

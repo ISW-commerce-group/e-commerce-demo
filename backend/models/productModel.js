@@ -25,7 +25,7 @@ class ProductModel {
             category: product.category_id,
             stock: product.stock
         });
-        return this.findById(id);
+        
     }
 
     static async updateProduct(id, product) {
@@ -41,7 +41,7 @@ class ProductModel {
             throw new Error('Product not found');
         }
         return this.getProductById(id);
-        return affectedRows > 0;
+        
     }
 
     static async deleteProduct(id) {
