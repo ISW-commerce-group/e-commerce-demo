@@ -5558,11 +5558,12 @@ a {
 /* ── LEFT decorative panel ── */
 .login-panel-left {
   background-color: #121212;
-  background-image: url('/login-floral-bg.png');
+  background-image: url('/fw2.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
+  position: sticky;
+  top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -5632,7 +5633,7 @@ a {
 
 /* Quote */
 .login-quote {
-  border-left: 1px solid rgba(255, 255, 255, .2);
+  
   padding-left: 1.7vw;
 }
 
@@ -5653,24 +5654,7 @@ a {
   letter-spacing: .1em;
 }
 
-/* Decorative horizontal lines at the bottom of left panel */
-.login-panel-lines {
-  display: flex;
-  flex-direction: column;
-  gap: .42vw;
-}
 
-.login-panel-line {
-  height: 1px;
-  background: rgba(255, 255, 255, .12);
-  transform-origin: left;
-  animation: login-line-expand .9s cubic-bezier(.165, .84, .44, 1) forwards;
-}
-
-.login-panel-line--delay {
-  animation-delay: .15s;
-  opacity: .5;
-}
 
 @keyframes login-line-expand {
   from {
@@ -5860,13 +5844,12 @@ a {
 }
 
 .login-checkbox:checked+.login-checkbox-custom::after {
-  content: '';
+  
   position: absolute;
   top: 15%;
   left: 28%;
   width: 40%;
   height: 65%;
-  border: 1.5px solid #fff;
   border-top: none;
   border-left: none;
   transform: rotate(45deg);
