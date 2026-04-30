@@ -1,5 +1,5 @@
 const pedidos_model = require('../models/pedidos_model');
-const { AppError } = require('../middlewares/error.middleware');
+const { AppError } = require('../middlewares/error_middleware');
 
 class pedidos_service {
 
