@@ -5,7 +5,7 @@ const baseFields = ['id', 'nombre', 'apellido', 'email', 'rol_id', 'telefono', '
 class UserModel {
 
     static baseQuery() {
-        return db('users').select(baseFields);
+        return db('usuarios').select(baseFields);
     }
 
     static async getAllUsers() {
@@ -21,7 +21,7 @@ class UserModel {
     }
 
     static async createUser(user) {
-        const [newUser] = await db('users')
+        const [newUser] = await db('usuarios')
             .insert({
                 nombre: user.nombre,
                 apellido: user.apellido,
@@ -46,7 +46,7 @@ class UserModel {
         if (user.telefono !== undefined) updateData.telefono = user.telefono;
         if (user.activo !== undefined) updateData.activo = user.activo;
 
-        const [updatedUser] = await db('users')
+        const [updatedUser] = await db('usuarios')
             .where({ id })
             .update(updateData)
             .returning(baseFields);
@@ -56,7 +56,7 @@ class UserModel {
 
     static async deleteUser(id) {
         // 🔹 Soft delete recomendado
-        const [updatedUser] = await db('users')
+        const [updatedUser] = await db('usuarios')
             .where({ id })
             .update({ activo: false })
             .returning(baseFields);

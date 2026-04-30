@@ -1,6 +1,6 @@
-const UserModel = require('../models/userModel');
+const UserModel = require('../models/user_model');
 const validator = require('validator');
-const { AppError } = require('../middlewares/error.middleware');
+const { AppError } = require('../middlewares/error_middleware');
 
 class UserService {
 
@@ -9,7 +9,7 @@ class UserService {
         return validator.isEmail(email);
     }
 
-    static async getAllUsers(searchQuery) {
+    static async get_all(searchQuery) {
         if (searchQuery && searchQuery.length > 100) {
             throw new AppError('Input demasiado largo', 400);
         }
