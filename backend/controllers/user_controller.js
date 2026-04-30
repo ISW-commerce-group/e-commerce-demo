@@ -4,7 +4,7 @@ class UserController {
 
     static async get_all(req, res, next) {
         try {
-            const users = await UserService.getAllUsers(req.query.search);
+            const users = await UserService.get_all(req.query.search);
             res.json(users);
         } catch (error) {
             next(error);
@@ -13,7 +13,7 @@ class UserController {
 
     static async get_by_id(req, res, next) {
         try {
-            const user = await UserService.getUserById(req.params.id);
+            const user = await UserService.get_by_id(req.params.id);
             res.json(user);
         } catch (error) {
             next(error);
@@ -22,7 +22,7 @@ class UserController {
 
     static async get_by_email(req, res, next) {
         try {
-            const user = await UserService.getUserByEmail(req.params.email);
+            const user = await UserService.get_by_email(req.params.email);
             res.json(user);
         } catch (error) {
             next(error);
@@ -31,7 +31,7 @@ class UserController {
 
     static async create(req, res, next) {
         try {
-            const createdUser = await UserService.createUser(req.body);
+            const createdUser = await UserService.create(req.body);
 
             res.status(201).json({
                 success: true,
@@ -46,7 +46,7 @@ class UserController {
 
     static async update(req, res, next) {
         try {
-            const updatedUser = await UserService.updateUser(
+            const updatedUser = await UserService.update(
                 req.params.id,
                 req.body
             );
@@ -64,7 +64,7 @@ class UserController {
 
     static async delete(req, res, next) {
         try {
-            const deletedUser = await UserService.deleteUser(req.params.id);
+            const deletedUser = await UserService.delete(req.params.id);
 
             res.json({
                 success: true,
