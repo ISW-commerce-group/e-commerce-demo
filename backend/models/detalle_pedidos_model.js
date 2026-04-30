@@ -1,70 +1,57 @@
 const db = require('../db');
 
+const baseFields = ['id', 'pedido_id', 'producto_id', 'cantidad', 'precio_unitario', 'subtotal'];
+
 class detalle_pedidos_model {
 
+    static baseQuery() {
+        return db('detalle_pedidos').select(baseFields);
+    }
+
     static async find_all_by_pedido(pedido_id) {
-        const [rows] = await db.query(
-            'SELECT * FROM detalle_pedidos WHERE pedido_id = ?',
-            [pedido_id]
-        );
-        return rows;
+        return this.baseQuery().where({ pedido_id });
     }
 
     static async find_by_id(id) {
-        const [rows] = await db.query(
-            'SELECT * FROM detalle_pedidos WHERE id = ?',
-            [id]
-        );
-        return rows[0] || null;
+        return this.baseQuery().where({ id }).first();
     }
 
     static async create(data) {
         const { pedido_id, producto_id, cantidad, precio_unitario, subtotal } = data;
-        const [result] = await db.query(
-            `INSERT INTO detalle_pedidos (pedido_id, producto_id, cantidad, precio_unitario, subtotal)
-             VALUES (?, ?, ?, ?, ?)`,
-            [pedido_id, producto_id, cantidad, precio_unitario, subtotal]
-        );
-        return result.insertId;
+
+        const [id] = await db('detalle_pedidos').insert({
+            pedido_id,
+            producto_id,
+            cantidad,
+            precio_unitario,
+            subtotal
+        });
+
+        return this.find_by_id(id);
     }
 
     static async update(id, data) {
-        const fields = [];
-        const values = [];
+        const updateData = {};
 
         const allowed = ['producto_id', 'cantidad', 'precio_unitario', 'subtotal'];
 
         for (const key of allowed) {
-            if (data[key] !== undefined) {
-                fields.push(`${key} = ?`);
-                values.push(data[key]);
-            }
+            if (data[key] !== undefined) updateData[key] = data[key];
         }
 
-        if (fields.length === 0) return false;
+        if (Object.keys(updateData).length === 0) return null;
 
-        values.push(id);
-        const [result] = await db.query(
-            `UPDATE detalle_pedidos SET ${fields.join(', ')} WHERE id = ?`,
-            values
-        );
-        return result.affectedRows > 0;
+        await db('detalle_pedidos').where({ id }).update(updateData);
+
+        return this.find_by_id(id);
     }
 
     static async delete(id) {
-        const [result] = await db.query(
-            'DELETE FROM detalle_pedidos WHERE id = ?',
-            [id]
-        );
-        return result.affectedRows > 0;
+        return await db('detalle_pedidos').where({ id }).delete();
     }
 
     static async delete_all_by_pedido(pedido_id) {
-        const [result] = await db.query(
-            'DELETE FROM detalle_pedidos WHERE pedido_id = ?',
-            [pedido_id]
-        );
-        return result.affectedRows;
+        return await db('detalle_pedidos').where({ pedido_id }).delete();
     }
 }
 
