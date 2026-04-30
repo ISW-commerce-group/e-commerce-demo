@@ -2348,6 +2348,14 @@ a {
   margin-bottom: 1.7vw;
 }
 
+.margin-top-24px {
+  margin-top: 3.4vw;
+}
+
+.margin-bottom-12px {
+  margin-bottom: 1.6vw;
+}
+
 .text-dark-gray {
   color: #424245;
 }
@@ -6540,3 +6548,37 @@ a {
     height: 7vw;
   }
 }
+
+.card-producto {
+            /* 1. Contenedor Principal */
+            width: 200px; /* Ancho ajustable según tu diseño */
+            background-color: #ffffff; /* Fondo blanco puro */
+            border: 1px solid #000; /* Borde gris muy fino y claro, clave de la imagen */
+            border-radius: 2px; /* Esquinas muy ligeramente redondeadas */
+            overflow: hidden; /* Asegura que nada se salga de los bordes redondos */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Sombra muy sutil para dar profundidad */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-producto-image-container {
+            /* 2. Contenedor de la Imagen */
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%; /* Truco para mantener una relación de aspecto 1:1 (cuadrada) */
+            position: relative;
+            background-color: #f9f9f9; /* Ligero fondo gris interno, como en la imagen */
+        }
+
+        .card-producto-image-container img {
+            /* 3. La Imagen */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Centra la imagen perfectamente */
+            max-width: 85%; /* La imagen no ocupa el 100%, dejando aire alrededor, igual que la referencia */
+            max-height: 85%;
+            object-fit: contain; /* Ajusta la imagen sin recortarla */
+        }
+
+        
