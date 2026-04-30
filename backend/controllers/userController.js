@@ -2,16 +2,17 @@ const UserService = require('../services/userService');
 
 class UserController {
 
-    static async getAllUsers(req, res) {
+    static async get_all_users(req, res) {
         try {
             const users = await UserService.getAllUsers();
             res.json(users);
         } catch (error) {
             res.status(500).json({ error: 'Internal server error' });
+            console.log('Exception: ${err}');
         }
     }
 
-    static async getUserById(req, res) {
+    static async get_user_by_id(req, res) {
         try {
             const user = await UserService.getUserById(req.params.id);
             res.json(user);
@@ -21,7 +22,7 @@ class UserController {
         }
     }
 
-    static async getUserByEmail(req, res) {
+    static async get_user_by_email(req, res) {
         try {
             const user = await UserService.getUserByEmail(req.params.email);
             res.json(user);
@@ -31,7 +32,7 @@ class UserController {
         }
     }
 
-    static async createUser(req, res) {
+    static async create_user(req, res) {
         try {
             const createdUser = await UserService.createUser(req.body);
 
@@ -45,7 +46,7 @@ class UserController {
         }
     }
 
-    static async updateUser(req, res) {
+    static async update_user(req, res) {
         try {
             const id = req.params.id;
 
@@ -62,7 +63,7 @@ class UserController {
         }
     }
 
-    static async deleteUser(req, res) {
+    static async delete_user(req, res) {
         try {
             const deletedUser = await UserService.deleteUser(req.params.id);
 
