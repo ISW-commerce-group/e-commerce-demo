@@ -3,12 +3,12 @@ const db = require('../db');
 class ProductModel {
 
     static baseQuery() {
-        return db('products').select(
+        return db('productos').select(
             'id',
-            'name',
-            'description',
-            'price',
-            'category_id',
+            'nombre',
+            'descripcion',
+            'precio',
+            'categoria_id',
             'stock'
         );
     }
@@ -22,20 +22,20 @@ class ProductModel {
     }
 
     static async getProductByName(name) {
-        return this.baseQuery().where({ name }).first();
+        return this.baseQuery().where({ nombre }).first();
     }
 
     static async getProductsByCategory(categoryId) {
-        return this.baseQuery().where({ category_id: categoryId });
+        return this.baseQuery().where({ categoria_id: categoryId });
     }
 
     static validateProduct(product, isUpdate = false) {
         if (!isUpdate) {
-            if (!product.name) throw new Error('Name is required');
-            if (product.price == null) throw new Error('Price is required');
+            if (!product.nombre) throw new Error('Name is required');
+            if (product.precio == null) throw new Error('Price is required');
         }
 
-        if (product.price !== undefined && product.price < 0) {
+        if (product.precio !== undefined && product.precio < 0) {
             throw new Error('Price cannot be negative');
         }
 
@@ -47,11 +47,11 @@ class ProductModel {
     static async createProduct(product) {
         this.validateProduct(product);
 
-        const [id] = await db('products').insert({
-            name: product.name,
-            description: product.description,
-            price: product.price,
-            category_id: product.category_id,
+        const [id] = await db('productos').insert({
+            nombre: product.nombre,
+            descripcion: product.descripcion,
+            precio: product.precio,
+            categoria_id: product.categoria_id,
             stock: product.stock
         });
 
@@ -63,13 +63,13 @@ class ProductModel {
 
         const updateData = {};
 
-        if (product.name !== undefined) updateData.name = product.name;
-        if (product.description !== undefined) updateData.description = product.description;
-        if (product.price !== undefined) updateData.price = product.price;
-        if (product.category_id !== undefined) updateData.category_id = product.category_id;
+        if (product.nombre !== undefined) updateData.nombre = product.nombre;
+        if (product.descripcion !== undefined) updateData.descripcion = product.descripcion;
+        if (product.precio !== undefined) updateData.precio = product.precio;
+        if (product.categoria_id !== undefined) updateData.categoria_id = product.categoria_id;
         if (product.stock !== undefined) updateData.stock = product.stock;
 
-        const affectedRows = await db('products')
+        const affectedRows = await db('productos')
             .where({ id })
             .update(updateData);
 
@@ -81,7 +81,7 @@ class ProductModel {
     }
 
     static async deleteProduct(id) {
-        const affectedRows = await db('products')
+        const affectedRows = await db('productos')
             .where({ id })
             .del();
 
