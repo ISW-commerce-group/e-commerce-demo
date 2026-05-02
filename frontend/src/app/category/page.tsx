@@ -1,55 +1,33 @@
+import CategoryCard from "@/components/CategoryCard"
+import { categories } from "@/data/categories"
 
-import { products } from "@/data/products"
-import ProductCard from "@/components/ProductCard"
-
-type Props = {
-    params: {
-        slug: string
-    }
-    }
-
-export default function CategoryPage({ params }: Props) {
-    const filteredProducts = products.filter(
-        (product) => product.category === params.slug
-    )
-
+export default function AllCategoriesPage() {
     return (
         <div>
-        <div className="container grid">
-
-            {/* HERO LEFT */}
-
-            <div className="grid-wrapper-left">
-            <div className="relative sticky-up_80px">
-                <div
-                className="hero_baground flex-vertical-center"
-                style={{
-                    backgroundImage:
-                    "url(https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/643432f353b60dfd4b4ecece_flowers.webp)",
-                }}
-                >
+            <div className="container">
                 <div className="content">
-                    <h1 className="text-white z_index-1">
-                        {(Array.isArray(params?.slug) ? params.slug.join('/') : params?.slug ?? '').replace(/-/g, ' ')}
-                    </h1>
+                    <h1>Shop</h1>
                 </div>
-                </div>
-
-                <div className="overlay_absolute"></div>
             </div>
+            <div className="container">
+                <section className="shop_category">
+                    {categories.map((category, index) => (
+                        <div
+                            key={category.id}
+                            className={
+                                index % 2 === 0
+                                    ? "grid-wrapper-right"
+                                    : "grid-wrapper-left"
+                            }
+                        >
+                            <CategoryCard
+                                category={category}
+                                invert={index % 2 !== 0}
+                            />
+                        </div>
+                    ))}
+                </section>
             </div>
-
-            {/* PRODUCTS RIGHT */}
-
-            <div className="grid-wrapper-right">
-            <div className="grid-wrapper-copy">
-                {filteredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-            </div>
-
-        </div>
         </div>
     )
 }

@@ -1,5 +1,3 @@
-
-import Link from "next/link"
 import { Category } from "@/types/category"
 
 export const categories: Category[] = [

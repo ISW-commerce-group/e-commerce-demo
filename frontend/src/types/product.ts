@@ -5,4 +5,5 @@ export type Product = {
     slug: string
     image: string
     category: string
+    description?: string
 }
