@@ -15,8 +15,8 @@ export default function ThankYouPage() {
 
                 <div className="wrapper-overflow_hidden margin-botton-64">
                     <p className="subtitle weight-regular black-90">
-                        We've received your order and are already preparing your bouquet
-                        with care. You'll receive a confirmation shortly.
+                        We&apos;ve received your order and are already preparing your bouquet
+                        with care. You&apos;ll receive a confirmation shortly.
                     </p>
                 </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useContext, useState, useEffect, useMemo, ReactNode } from "react";
 import { Product } from "@/types/product";
 
 export type CartItem = {
@@ -20,16 +20,14 @@ type CartContextType = {
 
 const CartContext = createContext<CartContextType | null>(null);
 
-export function CartProvider({ children }: { children: ReactNode }) {
+export function CartProvider({ children }: { readonly children: ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([]);
 
-    // Load cart from localStorage on mount
     useEffect(() => {
         const stored = localStorage.getItem("cart");
         if (stored) setItems(JSON.parse(stored));
     }, []);
 
-    // Save cart to localStorage on every change
     useEffect(() => {
         localStorage.setItem("cart", JSON.stringify(items));
     }, [items]);
@@ -72,18 +70,22 @@ export function CartProvider({ children }: { children: ReactNode }) {
         0
     );
 
+    const value = useMemo(
+        () => ({
+            items,
+            addToCart,
+            removeFromCart,
+            updateQuantity,
+            clearCart,
+            totalItems,
+            totalPrice,
+        }),
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [items, totalItems, totalPrice]
+    );
+
     return (
-        <CartContext.Provider
-            value={{
-                items,
-                addToCart,
-                removeFromCart,
-                updateQuantity,
-                clearCart,
-                totalItems,
-                totalPrice,
-            }}
-        >
+        <CartContext.Provider value={value}>
             {children}
         </CartContext.Provider>
     );

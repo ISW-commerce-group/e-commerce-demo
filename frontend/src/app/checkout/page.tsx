@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCart } from "@/context/CartContext";
@@ -136,11 +138,13 @@ export default function CheckoutPage() {
 
                     {items.map(({ product, quantity }) => (
                         <div key={product.id} className="flex margin-bottom-24px">
-                            <div style={{ width: 80, height: 80, flexShrink: 0 }}>
-                                <img
+                            <div style={{ width: 80, height: 80, flexShrink: 0, position: "relative" }}>
+                                <Image
                                     src={product.image}
                                     alt={product.name}
-                                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                    fill
+                                    style={{ objectFit: "cover" }}
+                                    sizes="80px"
                                 />
                             </div>
                             <div style={{ flex: 1, marginLeft: 12 }}>

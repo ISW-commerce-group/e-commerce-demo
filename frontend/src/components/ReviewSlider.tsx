@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 const reviews = [
     {
@@ -33,47 +34,47 @@ export default function ReviewSlider() {
             <div className="container">
                 <div className="content">
                     <div className="slider_reviews w-slider">
-
-                        {/* Google logo + label */}
                         <div className="margin-bottom-8px">
-                            <img
+                            <Image
                                 alt="google logo"
                                 loading="lazy"
+                                width={120}
+                                height={40}
                                 src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644c14578243042ce032ac85_google%20logo.png"
                             />
                         </div>
                         <div className="overline margin-bottom-24px">Reviews</div>
                         <h2 className="margin-botton-16">Our Clients say</h2>
 
-                        {/* Active review */}
                         <div className="slider_mask-reviws w-slider-mask">
                             <div className="w-slide">
                                 <div className="flex-vertical-center">
                                     <div className="margin-botton-40">
                                         <p className="h3-className italic black90">
-                                            "{reviews[current].text}"
+                                            &ldquo;{reviews[current].text}&rdquo;
                                         </p>
                                         <div className="subtitle black90">
-                                            – {reviews[current].author}
+                                            &ndash; {reviews[current].author}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Arrows */}
                         <button
                             onClick={prev}
                             className="left-arrow-hide-low-desktop w-slider-arrow-left"
                             aria-label="Previous review"
                             style={{ background: "none", border: "none", cursor: "pointer" }}
                         >
-                            <img
+                            <Image
                                 alt="arrow left"
                                 loading="lazy"
+                                width={32}
+                                height={32}
                                 src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e1252385d9bb_arrow_back_ios_FILL0_wght300_GRAD0_opsz40.svg"
                                 className="icon-32x32"
-                            />
+                                />
                         </button>
                         <button
                             onClick={next}
@@ -81,22 +82,23 @@ export default function ReviewSlider() {
                             aria-label="Next review"
                             style={{ background: "none", border: "none", cursor: "pointer" }}
                         >
-                            <img
+                            <Image
                                 alt="arrow right"
                                 loading="lazy"
+                                width={32}
+                                height={32}
                                 src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e17ec585d9ba_arrow_forward_ios_FILL0_wght300_GRAD0_opsz40.svg"
                                 className="icon-32x32"
-                            />
+                                />
                         </button>
 
-                        {/* Dot navigation */}
                         <div
                             className="slide-nav-visible-low-desktop margin-botton-40 w-slider-nav w-slider-nav-invert w-round"
                             style={{ display: "flex", gap: 8, justifyContent: "center", marginTop: 16 }}
                         >
-                            {reviews.map((_, i) => (
+                            {reviews.map((review, i) => (
                                 <button
-                                    key={i}
+                                    key={review.id}
                                     onClick={() => setCurrent(i)}
                                     aria-label={`Go to review ${i + 1}`}
                                     style={{
@@ -113,16 +115,14 @@ export default function ReviewSlider() {
                             ))}
                         </div>
 
-                        {/* Read reviews button */}
                         <div className="control-width-of-the-button-copy">
-                            <a href="#" className="second_button w-inline-block">
+                            <button className="second_button w-inline-block" style={{ cursor: "pointer" }}>
                                 <div className="wrap-button_text">
                                     <div className="button_text">Read reviews</div>
                                     <div className="button_text hide-mobile">Read reviews</div>
                                 </div>
-                            </a>
+                            </button>
                         </div>
-
                     </div>
                 </div>
             </div>

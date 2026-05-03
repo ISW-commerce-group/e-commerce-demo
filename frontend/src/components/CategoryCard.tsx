@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Category } from "@/types/category"
 
@@ -32,11 +33,12 @@ export default function CategoryCard({ category, invert }: Props) {
             href={`/category/${category.slug}`}
             className="card_category-img w-inline-block"
         >
-            <div className="img_category-fix_height">
-            <img
+            <div className="img_category-fix_height" style={{position:"relative"}}>
+            <Image
                 src={category.image}
                 alt={category.name}
-                className="img_100x100-fit_cover"
+                fill
+                style={{objectFit:"cover"}}
             />
             </div>
         </Link>

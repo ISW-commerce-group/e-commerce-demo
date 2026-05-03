@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 export default function AboutUsPage() {
@@ -32,27 +33,27 @@ export default function AboutUsPage() {
                             <div className="wrap-label-center-all-breakpoint gap_32px">
                                 <a href="#" className="w-inline-block">
                                     <div className="round_wrap-icon">
-                                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512bb0e2f24ef5ad20e4_Vectors-Wrapper.svg" loading="lazy" width="24" height="24" alt="instagram icon" className="icon24"/>
+                                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512bb0e2f24ef5ad20e4_Vectors-Wrapper.svg" loading="lazy" width={24} height={24} alt="instagram icon" className="icon24"/>
                                     </div>
                                 </a>
                                 <a href="#" className="w-inline-block">
                                     <div className="round_wrap-icon">
-                                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512c08fc507d2b596a48_Vectors-Wrapper.svg" loading="lazy" width="24" height="24" alt="pinteres icon" className="icon24"/>
+                                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512c08fc507d2b596a48_Vectors-Wrapper.svg" loading="lazy" width={24} height={24} alt="pinteres icon" className="icon24"/>
                                     </div>
                                 </a>
                                 <a href="#" className="w-inline-block">
                                     <div className="round_wrap-icon">
-                                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512cf75d20d725d6183e_Vectors-Wrapper.svg" loading="lazy" width="24" height="24" alt="facebook icon" className="icon24"/>
+                                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512cf75d20d725d6183e_Vectors-Wrapper.svg" loading="lazy" width={24} height={24} alt="facebook icon" className="icon24"/>
                                     </div>
                                 </a>
                                 <a href="#" className="w-inline-block">
                                     <div className="round_wrap-icon">
-                                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512d10ceaa5410c2bb9f_Vectors-Wrapper.svg" loading="lazy" width="24" height="24" alt="twitter icon" className="icon24"/>
+                                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512d10ceaa5410c2bb9f_Vectors-Wrapper.svg" loading="lazy" width={24} height={24} alt="twitter icon" className="icon24"/>
                                     </div>
                                 </a>
                                 <a href="#" className="w-inline-block">
                                     <div className="round_wrap-icon">
-                                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512ef6b6b416917f935b_Vectors-Wrapper.svg" loading="lazy" width="24" height="24" alt="telegram icon" className="icon24"/>
+                                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512ef6b6b416917f935b_Vectors-Wrapper.svg" loading="lazy" width={24} height={24} alt="telegram icon" className="icon24"/>
                                     </div>
                                 </a>
                             </div>
@@ -60,8 +61,8 @@ export default function AboutUsPage() {
                     </div>
                 </div>
                 <div className="grid-wrapper-right">
-                    <div className="img_100x100-fit_cover">
-                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image.png" loading="lazy" height="" alt="" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image-p-500.png 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image-p-800.png 800w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image-p-1080.png 1080w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image.png 1440w" sizes="(max-width: 991px) 100vw, (max-width: 2880px) 50vw, 1440px"/>
+                    <div className="img_100x100-fit_cover" style={{position:"relative",minHeight:500}}>
+                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442512f0b353c7303729616_image.png" loading="lazy" fill style={{objectFit:"cover"}} alt="" sizes="(max-width: 991px) 100vw, 50vw"/>
                     </div>
                 </div>
             </div>
@@ -84,8 +85,8 @@ export default function AboutUsPage() {
         <div data-w-id="2b66d980-5ac7-d783-557f-8d6e65f2242d">
             <div className="container grid">
                 <div className="grid-wrapper-left">
-                    <div className="wrapper_image-fix_height">
-                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74.png" loading="lazy" height="" alt="" sizes="(max-width: 640px) 100vw, 640px" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74-p-500.png 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74-p-800.png 800w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74-p-1080.png 1080w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74.png 1440w" className="img_100x100-fit_cover"/>
+                    <div className="wrapper_image-fix_height" style={{position:"relative",minHeight:500}}>
+                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6442743a10be975a90b4a942_Rectangle-74.png" loading="lazy" fill style={{objectFit:"cover"}} alt="" sizes="(max-width: 640px) 100vw, 640px"/>
                     </div>
                 </div>
                 <div className="grid-wrapper-right">
@@ -117,8 +118,8 @@ export default function AboutUsPage() {
                     </div>
                 </div>
                 <div className="grid-wrapper-right">
-                    <div className="wrapper_image-fix_height">
-                        <img loading="lazy" height="" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644281896d2dc44845a365da_books-vase-diffuser.webp" alt="" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644281896d2dc44845a365da_books-vase-diffuser-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644281896d2dc44845a365da_books-vase-diffuser.webp 720w" sizes="(max-width: 991px) 100vw, 50vw" className="img_100x100-fit_cover"/>
+                    <div className="wrapper_image-fix_height" style={{position:"relative",minHeight:500}}>
+                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644281896d2dc44845a365da_books-vase-diffuser.webp" loading="lazy" fill style={{objectFit:"cover"}} alt="" sizes="(max-width: 991px) 100vw, 50vw"/>
                     </div>
                 </div>
             </div>
@@ -126,8 +127,8 @@ export default function AboutUsPage() {
         <div data-w-id="2b66d980-5ac7-d783-557f-8d6e65f2242d">
             <div className="container grid">
                 <div className="grid-wrapper-left">
-                    <div className="wrapper_image-fix_height">
-                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64427ecc153b4214c3e97f49_gift-roses%20copy.webp" loading="lazy" height="" alt="" sizes="(max-width: 991px) 100vw, 50vw" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64427ecc153b4214c3e97f49_gift-roses%20copy-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64427ecc153b4214c3e97f49_gift-roses%20copy-p-800.webp 800w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64427ecc153b4214c3e97f49_gift-roses%20copy.webp 960w" className="img_100x100-fit_cover"/>
+                    <div className="wrapper_image-fix_height" style={{position:"relative",minHeight:500}}>
+                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64427ecc153b4214c3e97f49_gift-roses%20copy.webp" loading="lazy" fill style={{objectFit:"cover"}} alt="" sizes="(max-width: 991px) 100vw, 50vw"/>
                     </div>
                 </div>
                 <div className="grid-wrapper-right">
@@ -149,5 +150,3 @@ export default function AboutUsPage() {
     </div>
     );
 }
-
-

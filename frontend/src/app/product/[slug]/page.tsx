@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useState, use } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { use } from "react";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 import { useCart } from "@/context/CartContext";
 import ProductCard from "@/components/ProductCard";
 
 type Props = {
-    params: Promise<{ slug: string }>;
+    readonly params: Promise<{ slug: string }>;
 };
 
 export default function ProductPage({ params }: Props) {
@@ -34,32 +34,26 @@ export default function ProductPage({ params }: Props) {
 
     return (
         <div>
-            {/* ── PRODUCT MAIN ── */}
             <div className="container grid">
-
-                {/* LEFT — image */}
                 <div className="grid-wrapper-left">
                     <div className="relative sticky-up_80px">
-                        <div className="img_category-fix_height">
-                            <img
+                        <div className="img_category-fix_height" style={{position:"relative"}}>
+                            <Image
                                 src={product.image}
                                 alt={product.name}
-                                className="img_100x100-fit_cover"
+                                fill
+                                style={{objectFit:"cover"}}
+                                sizes="(max-width: 991px) 100vw, 50vw"
                             />
                         </div>
                     </div>
                 </div>
 
-                {/* RIGHT — info */}
                 <div className="grid-wrapper-right">
                     <div className="content">
-
-                        {/* Breadcrumb */}
                         <div className="wrapper-overflow_hidden margin-bottom-24px">
                             <div className="overline">
-                                <Link href="/category" className="text-gray">
-                                    Shop
-                                </Link>
+                                <Link href="/category" className="text-gray">Shop</Link>
                                 {category && (
                                     <>
                                         {" / "}
@@ -71,35 +65,28 @@ export default function ProductPage({ params }: Props) {
                             </div>
                         </div>
 
-                        {/* Name */}
                         <div className="wrapper-overflow_hidden margin-botton-16">
                             <h1>{product.name}</h1>
                         </div>
 
-                        {/* Price */}
                         <div className="wrapper-overflow_hidden margin-bottom-24px">
-                            <p className="subtitle weight-regular">
-                                ${product.price}
-                            </p>
+                            <p className="subtitle weight-regular">${product.price}</p>
                         </div>
 
                         <div className="border-b margin-botton-64" />
 
-                        {/* Description */}
                         {product.description && (
                             <div className="wrapper-overflow_hidden margin-botton-64">
                                 <p className="black-90">{product.description}</p>
                             </div>
                         )}
 
-                        {/* Delivery note */}
                         <div className="wrapper-overflow_hidden margin-bottom-24px">
                             <p className="caption-small text-gray">
-                                Same-day delivery available · Delivered personally, without boxes
+                                Same-day delivery available &middot; Delivered personally, without boxes
                             </p>
                         </div>
 
-                        {/* Add to cart button */}
                         <div className="control-width-of-the-button">
                             <button
                                 onClick={handleAddToCart}
@@ -116,12 +103,10 @@ export default function ProductPage({ params }: Props) {
                                 </div>
                             </button>
                         </div>
-
                     </div>
                 </div>
             </div>
 
-            {/* ── RELATED PRODUCTS ── */}
             {relatedProducts.length > 0 && (
                 <div>
                     <div className="container">

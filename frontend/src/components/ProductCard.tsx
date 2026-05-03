@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 import { Product } from "@/types/product"
 
@@ -21,11 +22,12 @@ type Props = {
             </div>
             </div>
 
-            <div className="card_img">
-            <img
+            <div className="card_img" style={{position:"relative"}}>
+            <Image
                 src={product.image}
                 alt={product.name}
-                className="img_100x100-fit_cover"
+                fill
+                style={{objectFit:"cover"}}
             />
             </div>
         </div>

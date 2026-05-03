@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useCart } from "@/context/CartContext";
 
 export default function CartPage() {
@@ -43,12 +44,13 @@ export default function CartPage() {
                             <div key={product.id} className="flex margin-bottom-24px">
 
                                 {/* Image */}
-                                <div style={{ width: 100, height: 100, flexShrink: 0 }}>
-                                    <img
+                                <div style={{ width: 100, height: 100, flexShrink: 0, position: "relative" }}>
+                                    <Image
                                         src={product.image}
                                         alt={product.name}
-                                        className="img_100x100-fit_cover"
-                                        style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                                        fill
+                                        style={{ objectFit: "cover" }}
+                                        sizes="100px"
                                     />
                                 </div>
 
@@ -58,15 +60,13 @@ export default function CartPage() {
                                     <p className="subtitle weight-regular text-gray">
                                         ${product.price}
                                     </p>
-
-                                    {/* Quantity controls */}
                                     <div className="display-flex_horizontal_center" style={{ gap: 12, marginTop: 8 }}>
                                         <button
                                             onClick={() => updateQuantity(product.id, quantity - 1)}
                                             className="menu-button-lower-desktop"
                                             aria-label="Decrease quantity"
                                         >
-                                            −
+                                            &minus;
                                         </button>
                                         <span className="subtitle weight-regular">{quantity}</span>
                                         <button
@@ -99,7 +99,7 @@ export default function CartPage() {
                     <div className="border-b margin-botton-64" />
 
                     <Link href="/category" className="caption-small text-gray">
-                        ← Continue shopping
+                        &larr; Continue shopping
                     </Link>
                 </div>
             </div>
@@ -112,16 +112,12 @@ export default function CartPage() {
                     </div>
 
                     <div className="flex margin-bottom-24px">
-                        <p className="subtitle weight-regular text-gray" style={{ flex: 1 }}>
-                            Subtotal
-                        </p>
+                        <p className="subtitle weight-regular text-gray" style={{ flex: 1 }}>Subtotal</p>
                         <p className="subtitle weight-regular">${totalPrice}</p>
                     </div>
 
                     <div className="flex margin-bottom-24px">
-                        <p className="subtitle weight-regular text-gray" style={{ flex: 1 }}>
-                            Delivery
-                        </p>
+                        <p className="subtitle weight-regular text-gray" style={{ flex: 1 }}>Delivery</p>
                         <p className="subtitle weight-regular">Free</p>
                     </div>
 
