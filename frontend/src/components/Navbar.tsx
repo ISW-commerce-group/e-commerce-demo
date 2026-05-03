@@ -2,9 +2,11 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { totalItems } = useCart();
 
     // Close menu on route change / Escape key
     useEffect(() => {
@@ -66,16 +68,37 @@ export default function Navbar() {
                 <div className="nav-link-right">
                     <div className="plug-w100" />
 
-                    {/* Cart icon — mobile only */}
-                    <div className="cart-button-lower-desktop">
-                        <img
-                            src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/649c824defd18fb4cfaba780_svg.svg"
-                            loading="lazy"
-                            height="Auto"
-                            width="Auto"
-                            alt="cart"
-                            className="icon24"
-                        />
+                   {/* Cart icon — mobile only */}
+                    <div className="cart-button-lower-desktop" style={{ position: "relative" }}>
+                        <Link href="/cart" style={{ display: "flex", alignItems: "center" }}>
+                            <img
+                                src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/649c824defd18fb4cfaba780_svg.svg"
+                                loading="lazy"
+                                height="Auto"
+                                width="Auto"
+                                alt="cart"
+                                className="icon24"
+                            />
+                            {totalItems > 0 && (
+                                <span style={{
+                                    position: "absolute",
+                                    top: -6,
+                                    right: -6,
+                                    background: "#000",
+                                    color: "#fff",
+                                    borderRadius: "50%",
+                                    width: 16,
+                                    height: 16,
+                                    fontSize: 10,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    fontWeight: 600,
+                                }}>
+                                    {totalItems}
+                                </span>
+                            )}
+                        </Link>
                     </div>
 
                     {/* Desktop nav links (hidden on mobile via CSS) */}
@@ -87,9 +110,13 @@ export default function Navbar() {
                             </Link>
                         </div>
                         <div className="link-block-wrap border-l">
-                            <Link href="#" className="links w-inline-block">
-                                <div className="link-text">Cart</div>
-                                <div className="link-text">Cart</div>
+                            <Link href="/cart" className="links w-inline-block" style={{ position: "relative" }}>
+                                <div className="link-text">
+                                    Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+                                </div>
+                                <div className="link-text">
+                                    Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+                                </div>
                             </Link>
                         </div>
                     </nav>

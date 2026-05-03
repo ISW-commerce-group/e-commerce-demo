@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CategoryCard from "@/components/CategoryCard"
+import ReviewSlider from "@/components/ReviewSlider"
 import { categories } from "@/data/categories"
 export default function Home() {
   return (
@@ -285,53 +286,7 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div>
-            <div className="container">
-                <div className="content">
-                    <div data-delay="4000" data-animation="slide" className="slider_reviews w-slider" data-autoplay="false" data-easing="ease-in-quad" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="300" data-infinite="true">
-                        <div className="margin-bottom-8px">
-                            <img alt="google logo" loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644c14578243042ce032ac85_google%20logo.png"/>
-                        </div>
-                        <div className="overline margin-bottom-24px">Reviews</div>
-                        <h2 className="margin-botton-16">Our Clients say</h2>
-                        <div className="slider_mask-reviws w-slider-mask">
-                            <div className="w-slide">
-                                <div className="flex-vertical-center">
-                                    <div className="margin-botton-40">
-                                        <p className="h3-className italic black90">“Ordered flowers online and they were the best bouquet! Impressed everyone around. Highly recommend this flower shop!”</p>
-                                        <div className="subtitle black90">– Ronald Richards</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="w-slide">
-                                <div className="flex-vertical-center">
-                                    <div className="margin-botton-40">
-                                        <p className="h3-className italic black90">“Flower subscriptions revolutionized my Kiev hotel! Conveniently customize and receive fresh bouquets regularly. Highly recommended for hassle-free floral arrangements!”</p>
-                                        <div className="subtitle black90">– Leonid Yurushev</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="left-arrow-hide-low-desktop w-slider-arrow-left">
-                            <img alt="button arrow left" loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e1252385d9bb_arrow_back_ios_FILL0_wght300_GRAD0_opsz40.svg" className="icon-32x32"/>
-                        </div>
-                        <div className="right-arrow-hide-low-desktop w-slider-arrow-right">
-                            <img alt="button icon right " loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e17ec585d9ba_arrow_forward_ios_FILL0_wght300_GRAD0_opsz40.svg" className="icon-32x32"/>
-                        </div>
-                        <div className="slide-nav-visible-low-desktop margin-botton-40 w-slider-nav w-slider-nav-invert w-round"></div>
-                        <div className="control-width-of-the-button-copy">
-                            <a data-w-id="5a5537f0-643c-0793-11e8-339274a5209f" href="#" className="second_button w-inline-block">
-                                <div className="wrap-button_text">
-                                    <div className="button_text">Read reviews</div>
-                                    <div className="button_text hide-mobile">Read reviews</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <ReviewSlider />
         </div>
-        
-    </div>
     );
 }
