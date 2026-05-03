@@ -1,5 +1,4 @@
 import Image from "next/image";
-
 export default function Footer() {
     return ( 
 <div>
@@ -51,19 +50,19 @@ export default function Footer() {
                     <h5 className="text-gray margin-bottom-24px">Follow Us</h5>
                     <div className="flex_horizont-justify_start gap-32px">
                         <a href="#" className="link-block w-inline-block">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" width="24" height="24" alt="store photo" className="icon24"/>
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" width={24} height={24} alt="store photo" className="icon24"/>
                         </a>
                         <a href="#" className="link-block w-inline-block">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg" loading="lazy" width="24" height="24" alt="" className="icon24"/>
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                         </a>
                         <a href="#" className="link-block w-inline-block">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg" loading="lazy" width="24" height="24" alt="" className="icon24"/>
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                         </a>
                         <a href="#" className="link-block w-inline-block">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg" loading="lazy" width="24" height="24" alt="" className="icon24"/>
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                         </a>
                         <a href="#" className="link-block-no-margin w-inline-block">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg" loading="lazy" width="24" height="24" alt="" className="icon24"/>
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                         </a>
                     </div>
                 </div>

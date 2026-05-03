@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Image from "next/image";
 
 export default function Subscription() {
   return (
@@ -89,7 +89,7 @@ export default function Subscription() {
                                     <div className="plan_card-grid_content">
                                         <div className="grid-wrapper-left">
                                             <div className="wrapper-overflow_hidden">
-                                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914d82daf41dba1c7e6_Classic_Subscription.webp" loading="lazy" alt="" sizes="(max-width: 479px) 91vw, (max-width: 991px) 45vw, 22vw" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914d82daf41dba1c7e6_Classic_Subscription-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914d82daf41dba1c7e6_Classic_Subscription.webp 600w" className="plan_card-image"/>
+                                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914d82daf41dba1c7e6_Classic_Subscription.webp" loading="lazy" width={300} height={300} alt="" style={{objectFit:"cover",width:"100%",height:"auto"}}/>
                                             </div>
                                         </div>
                                         <div className="grid-wrapper-right">
@@ -116,7 +116,7 @@ export default function Subscription() {
                                     <div className="plan_card-grid_content">
                                         <div className="grid-wrapper-left">
                                             <div className="wrapper-overflow_hidden">
-                                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914e8478a1d953b1791_Seasonal_Subscription.webp" loading="lazy" alt="" sizes="(max-width: 479px) 91vw, (max-width: 991px) 45vw, 22vw" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914e8478a1d953b1791_Seasonal_Subscription-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914e8478a1d953b1791_Seasonal_Subscription.webp 600w" className="plan_card-image"/>
+                                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c914e8478a1d953b1791_Seasonal_Subscription.webp" loading="lazy" width={300} height={300} alt="" style={{objectFit:"cover",width:"100%",height:"auto"}}/>
                                             </div>
                                         </div>
                                         <div className="grid-wrapper-right">
@@ -144,7 +144,7 @@ export default function Subscription() {
                                     <div className="plan_card-grid_content">
                                         <div className="grid-wrapper-left">
                                             <div className="wrapper-overflow_hidden">
-                                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c23ff2f4a80bdf1a23f2_Subscription.webp" loading="lazy" alt="" sizes="(max-width: 479px) 91vw, (max-width: 991px) 45vw, 22vw" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c23ff2f4a80bdf1a23f2_Subscription-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c23ff2f4a80bdf1a23f2_Subscription.webp 600w" className="plan_card-image"/>
+                                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6437c23ff2f4a80bdf1a23f2_Subscription.webp" loading="lazy" width={300} height={300} alt="" style={{objectFit:"cover",width:"100%",height:"auto"}}/>
                                             </div>
                                         </div>
                                         <div className="grid-wrapper-right">
@@ -207,13 +207,13 @@ export default function Subscription() {
                             <p className="margin-bottom-24px black90">Pay once and do not worry about flowers, our bouquets will be beautiful and on time, as many times as you need</p>
                             <a data-w-id="6fb8faec-3c75-c16f-515d-e8c0617a3705" href="#" className="input-stepper w-inline-block">
                                 <div className="stepper-butom border-r">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f7632c448e7ff1bf3c5a_remove_FILL0_wght300_GRAD0_opsz24.svg" loading="lazy" alt=""/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f7632c448e7ff1bf3c5a_remove_FILL0_wght300_GRAD0_opsz24.svg" loading="lazy" width={24} height={24} alt=""/>
                                 </div>
                                 <div className="quantity">
                                     <p>1</p>
                                 </div>
                                 <div className="stepper-butom border-l">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f7632c448e3ce2bf3c59_add_FILL0_wght300_GRAD0_opsz24.svg" loading="lazy" alt=""/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f7632c448e3ce2bf3c59_add_FILL0_wght300_GRAD0_opsz24.svg" loading="lazy" width={24} height={24} alt=""/>
                                 </div>
                             </a>
                             <div data-w-id="ddc27758-818b-773b-7062-6f5db705e2be" className="bg_35-black_absolute-copy"></div>
@@ -246,7 +246,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">How often will I get a new bouquet?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Our subscriptions allow you to select a delivery frequency that best suits your needs - either weekly, bi-weekly, or monthly. You can also choose the number of deliveries for your subscription. Choose any combination that works for you!</div>
@@ -255,7 +255,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">Can I suspend my subscription to flowers ?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Depending on the day you first choose for your flower delivery, we will deliver on that day for all future deliveries. So if you get your flowers on Thursday every other week, you will get another flower delivery two weeks later on Thursday.</div>
@@ -264,7 +264,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">Can I choose which bouquet I get ?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Each subscription option is carefully selected by our specialists. Our florists select the best and freshest varieties for delivery that surprise and delight every time; thus, the current subscription offer does not allow you to choose a different bouquet for each delivery or to receive the entire subscription with one particular bouquet. Each bouquet will be individual and made according to your chosen plan - classic, seasonal or luxury bouquets</div>
@@ -273,7 +273,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">Can I change the shipping address ?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Yes, you can! After you create an account, you can log in and adjust your settings to pause the next delivery and let us know the next best delivery date.</div>
@@ -282,7 +282,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">What day will the subscription bouquet come?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Depending on the day you first choose for your flower delivery, we will deliver on that day for all future deliveries. So if you get your flowers on Thursday every other week, you will get another flower delivery two weeks later on Thursday.</div>
@@ -291,7 +291,7 @@ export default function Subscription() {
                         <div data-hover="false" data-delay="0" data-w-id="5457b443-da73-7c54-219e-722967231293" className="dropdown w-dropdown">
                             <div className="dropdown-toggle w-dropdown-toggle">
                                 <div className="text_big">Can I suspend my subscription to flowers ?</div>
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" alt="" className="icon24"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b0c76464cee3512179e4_arrow-bottom-right.svg" loading="lazy" width={24} height={24} alt="" className="icon24"/>
                             </div>
                             <nav className="dropdown-list w-dropdown-list">
                                 <div className="black90">Yes, you can! After you create an account, you can log in and adjust your settings to pause the next delivery and let us know the next best delivery date.</div>
@@ -353,11 +353,6 @@ export default function Subscription() {
             </div>
             <div className="modal-background"></div>
         </div>
-        <Script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6400d82951450021c2d1eb7b" strategy="beforeInteractive" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossOrigin="anonymous"></Script>
-        <Script src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/js/webflow.b58961507.js" strategy="afterInteractive" ></Script>
     </div>
     );
 }
-
-
-

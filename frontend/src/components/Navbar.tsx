@@ -2,9 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { useCart } from "@/context/CartContext";
 
 export default function Navbar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const { totalItems } = useCart();
 
     // Close menu on route change / Escape key
     useEffect(() => {
@@ -67,16 +70,35 @@ export default function Navbar() {
                     <div className="plug-w100" />
 
                     {/* Cart icon — mobile only */}
-                    <div className="cart-button-lower-desktop">
-                        <img
+                    <Link href="/cart" className="cart-button-lower-desktop" style={{ position: "relative", display: "inline-flex" }}>
+                        <Image
                             src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/649c824defd18fb4cfaba780_svg.svg"
                             loading="lazy"
-                            height="Auto"
-                            width="Auto"
+                            width={24}
+                            height={24}
                             alt="cart"
                             className="icon24"
                         />
-                    </div>
+                        {totalItems > 0 && (
+                            <span style={{
+                                position: "absolute",
+                                top: -6,
+                                right: -6,
+                                background: "#000",
+                                color: "#fff",
+                                borderRadius: "50%",
+                                width: 16,
+                                height: 16,
+                                fontSize: 10,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                fontWeight: 600,
+                            }}>
+                                {totalItems}
+                            </span>
+                        )}
+                    </Link>
 
                     {/* Desktop nav links (hidden on mobile via CSS) */}
                     <nav role="navigation" className="nav-link-wrap w-nav-menu">
@@ -87,9 +109,13 @@ export default function Navbar() {
                             </Link>
                         </div>
                         <div className="link-block-wrap border-l">
-                            <Link href="#" className="links w-inline-block">
-                                <div className="link-text">Cart</div>
-                                <div className="link-text">Cart</div>
+                            <Link href="/cart" className="links w-inline-block" style={{ position: "relative" }}>
+                                <div className="link-text">
+                                    Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+                                </div>
+                                <div className="link-text">
+                                    Cart{totalItems > 0 ? ` (${totalItems})` : ""}
+                                </div>
                             </Link>
                         </div>
                     </nav>
@@ -160,11 +186,11 @@ export default function Navbar() {
 
                         {/* Social icons */}
                         <div className="icon-wrap-hide-desktop">
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" width="24" height="24" alt="Instagram" className="icon24" />
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg" loading="lazy" width="24" height="24" alt="Pinterest" className="icon24" />
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg" loading="lazy" width="24" height="24" alt="Facebook" className="icon24" />
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg" loading="lazy" width="24" height="24" alt="Twitter" className="icon24" />
-                            <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg" loading="lazy" width="24" height="24" alt="Telegram" className="icon24" />
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" width={24} height={24} alt="Instagram" className="icon24" />
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1d70bf86c58_Pinterest.svg" loading="lazy" width={24} height={24} alt="Pinterest" className="icon24" />
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e16d07f86c59_Facebook.svg" loading="lazy" width={24} height={24} alt="Facebook" className="icon24" />
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e1cb4ef86c57_Twitter.svg" loading="lazy" width={24} height={24} alt="Twitter" className="icon24" />
+                            <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e17d93f86c5a_Telegram.svg" loading="lazy" width={24} height={24} alt="Telegram" className="icon24" />
                         </div>
                     </nav>
                 </div>

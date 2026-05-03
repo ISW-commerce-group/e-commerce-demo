@@ -7,8 +7,8 @@ export const products: Product[] = [
         price: 55,
         slug: "blue-harmony",
         category: "fresh-flowers",
-        image:
-        "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f30da060985be0af72e_640a0fe3f475267be455035a_DoubleLuna_Carouseljpg%20copy%202.webp",
+        description: "A serene composition of blue and white blooms, carefully selected to evoke calm and elegance. Arranged by our expert florists using only the freshest seasonal flowers.",
+        image: "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f30da060985be0af72e_640a0fe3f475267be455035a_DoubleLuna_Carouseljpg%20copy%202.webp",
     },
     {
         id: "2",
@@ -16,8 +16,8 @@ export const products: Product[] = [
         price: 120,
         slug: "rosy-delight",
         category: "fresh-flowers",
-        image:
-        "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2fe557aa7e71a27760_640a0d9e587af69abd0e9f4c_rue-de-la-rosiere-en4%20copy%202.webp",
+        description: "An opulent arrangement of premium roses in warm, romantic tones. Crafted for life's most meaningful moments. Each rose is hand-picked for peak freshness.",
+        image: "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2fe557aa7e71a27760_640a0d9e587af69abd0e9f4c_rue-de-la-rosiere-en4%20copy%202.webp",
     },
     {
         id: "3",
@@ -25,8 +25,8 @@ export const products: Product[] = [
         price: 100,
         slug: "dawns-delight",
         category: "fresh-flowers",
-        image:
-        "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2f1d0047afe1dfaeff_640a0dd1910159199045fee7_point-du-jour%20copy%202.webp",
+        description: "Inspired by the soft light of early morning, this bouquet blends pastel blooms with delicate greenery. A gentle, uplifting gift for someone you want to brighten up.",
+        image: "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2f1d0047afe1dfaeff_640a0dd1910159199045fee7_point-du-jour%20copy%202.webp",
     },
     {
         id: "4",
@@ -34,7 +34,7 @@ export const products: Product[] = [
         price: 89,
         slug: "serenity",
         category: "fresh-flowers",
-        image:
-        "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2f697cd605182dd107_640a036eec3dfd7a162d1fe9_championnet-en%20copy%202.webp",
+        description: "A balanced, minimalist arrangement that speaks volumes through simplicity. White and ivory flowers in a timeless composition suited for any occasion.",
+        image: "https://cdn.prod.website-files.com/6400d82951450087c6d1eba8/64342f2f697cd605182dd107_640a036eec3dfd7a162d1fe9_championnet-en%20copy%202.webp",
     },
 ]

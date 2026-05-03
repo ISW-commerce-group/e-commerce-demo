@@ -1,5 +1,6 @@
-import Image from "next/image";
+import Image from "next/image"
 import CategoryCard from "@/components/CategoryCard"
+import ReviewSlider from "@/components/ReviewSlider"
 import { categories } from "@/data/categories"
 export default function Home() {
   return (
@@ -27,7 +28,7 @@ export default function Home() {
                         </div>
                         <div data-w-id="2be7e308-98c8-825a-0843-b2a20f7ca9f8" className="hero-row2">
                             <div data-w-id="2be7e308-98c8-825a-0843-b2a20f7ca9f9" className="column_decor">
-                                <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03d676a877d080695084a_ewddewd%201.webp" loading="lazy" alt="" className="img_height-200px"/>
+                                <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03d676a877d080695084a_ewddewd%201.webp" loading="lazy" width={200} height={200} alt="" className="img_height-200px"/>
                                 <div data-w-id="2be7e308-98c8-825a-0843-b2a20f7ca9fb" className="background_white-absolute"></div>
                             </div>
                             <div className="column_decor2">
@@ -173,11 +174,11 @@ export default function Home() {
                             </div>
                             <div className="wrap-links-fixheight">
                                 <a href="#" className="link-icon margin-bottom-24px w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b419cf29328d429a83a1_phone.svg" loading="lazy" alt="icon phone" className="icon24 margin-right-4px"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b419cf29328d429a83a1_phone.svg" loading="lazy" width={24} height={24} alt="icon phone" className="icon24 margin-right-4px"/>
                                     <div>+380980099777</div>
                                 </a>
                                 <a href="#" className="link-icon w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b419cf29328d429a83a1_phone.svg" loading="lazy" alt="icon phone" className="icon24 margin-right-4px"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b419cf29328d429a83a1_phone.svg" loading="lazy" width={24} height={24} alt="icon phone" className="icon24 margin-right-4px"/>
                                     <div>+380980099111</div>
                                 </a>
                             </div>
@@ -189,7 +190,7 @@ export default function Home() {
                             <div className="wrap-links-fixheight">
                                 <div className="overline margin-bottom-24px">opening hours: 8 to 11 p.m.</div>
                                 <a href="#" className="link-icon w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b4fa542dd3a61c5e2cf7_pin-bottom.svg" loading="lazy" alt="icon map pin" className="icon24 margin-right-4px"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a2b4fa542dd3a61c5e2cf7_pin-bottom.svg" loading="lazy" width={24} height={24} alt="icon map pin" className="icon24 margin-right-4px"/>
                                     <div>15/4 Khreshchatyk Street, Kyiv</div>
                                 </a>
                             </div>
@@ -197,27 +198,27 @@ export default function Home() {
                     </div>
                 </div>
                 <div id="w-node-_33cac0cd-d791-6a2e-bc7e-eb57269fa38c-d3d1eb7f" className="grid-wrapper-right">
-                    <div className="relative-copy">
-                        <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03b42882782a8aa1f0e26_KYIV%20LB%202%20720.webp" loading="lazy" alt="store photo" srcSet="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03b42882782a8aa1f0e26_KYIV%20LB%202%20720-p-500.webp 500w, https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03b42882782a8aa1f0e26_KYIV%20LB%202%20720.webp 720w" sizes="(max-width: 991px) 100vw, 50vw" className="img_100x100-fit_cover"/>
+                    <div className="relative-copy" style={{position:"relative",minHeight:400}}>
+                        <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/64a03b42882782a8aa1f0e26_KYIV%20LB%202%20720.webp" loading="lazy" alt="store photo" fill style={{objectFit:"cover"}} sizes="(max-width: 991px) 100vw, 50vw"/>
                         <div className="wrap-position_absolute">
                             <div className="wrap-label-center border-r">
                                 <h3>Follow us</h3>
                             </div>
                             <div className="wrap-label-center gap_32px">
                                 <a href="#" className="w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" height="" alt="store photo" className="icon24"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f820e186e144ecf86c56_Instagram.svg" loading="lazy" width={24} height={24} alt="store photo" className="icon24"/>
                                 </a>
                                 <a href="#" className="w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f753d4f655c8f2bf247e_Pinterest.svg" loading="lazy" width="24" height="24" alt="pinterest icon" className="icon24"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f753d4f655c8f2bf247e_Pinterest.svg" loading="lazy" width={24} height={24} alt="pinterest icon" className="icon24"/>
                                 </a>
                                 <a href="#" className="w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f753d4f655b80fbf247f_Facebook.svg" loading="lazy" width="24" height="24" alt="facebook icon" className="icon24"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f753d4f655b80fbf247f_Facebook.svg" loading="lazy" width={24} height={24} alt="facebook icon" className="icon24"/>
                                 </a>
                                 <a href="#" className="w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f814197ec75b715f8e48_Twitter.svg" loading="lazy" width="24" height="24" alt="twitter icon" className="icon24"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f814197ec75b715f8e48_Twitter.svg" loading="lazy" width={24} height={24} alt="twitter icon" className="icon24"/>
                                 </a>
                                 <a href="#" className="w-inline-block">
-                                    <img src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f814197ec7092c5f8e4b_Telegram.svg" loading="lazy" width="24" height="24" alt="telegram icon" className="icon24"/>
+                                    <Image src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6433f814197ec7092c5f8e4b_Telegram.svg" loading="lazy" width={24} height={24} alt="telegram icon" className="icon24"/>
                                 </a>
                             </div>
                         </div>
@@ -285,53 +286,8 @@ export default function Home() {
                 </div>
             </div>
         </div>
-        <div>
-            <div className="container">
-                <div className="content">
-                    <div data-delay="4000" data-animation="slide" className="slider_reviews w-slider" data-autoplay="false" data-easing="ease-in-quad" data-hide-arrows="false" data-disable-swipe="false" data-autoplay-limit="0" data-nav-spacing="3" data-duration="300" data-infinite="true">
-                        <div className="margin-bottom-8px">
-                            <img alt="google logo" loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/644c14578243042ce032ac85_google%20logo.png"/>
-                        </div>
-                        <div className="overline margin-bottom-24px">Reviews</div>
-                        <h2 className="margin-botton-16">Our Clients say</h2>
-                        <div className="slider_mask-reviws w-slider-mask">
-                            <div className="w-slide">
-                                <div className="flex-vertical-center">
-                                    <div className="margin-botton-40">
-                                        <p className="h3-className italic black90">“Ordered flowers online and they were the best bouquet! Impressed everyone around. Highly recommend this flower shop!”</p>
-                                        <div className="subtitle black90">– Ronald Richards</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="w-slide">
-                                <div className="flex-vertical-center">
-                                    <div className="margin-botton-40">
-                                        <p className="h3-className italic black90">“Flower subscriptions revolutionized my Kiev hotel! Conveniently customize and receive fresh bouquets regularly. Highly recommended for hassle-free floral arrangements!”</p>
-                                        <div className="subtitle black90">– Leonid Yurushev</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="left-arrow-hide-low-desktop w-slider-arrow-left">
-                            <img alt="button arrow left" loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e1252385d9bb_arrow_back_ios_FILL0_wght300_GRAD0_opsz40.svg" className="icon-32x32"/>
-                        </div>
-                        <div className="right-arrow-hide-low-desktop w-slider-arrow-right">
-                            <img alt="button icon right " loading="lazy" src="https://cdn.prod.website-files.com/6400d82951450021c2d1eb7b/6434481dccb1e17ec585d9ba_arrow_forward_ios_FILL0_wght300_GRAD0_opsz40.svg" className="icon-32x32"/>
-                        </div>
-                        <div className="slide-nav-visible-low-desktop margin-botton-40 w-slider-nav w-slider-nav-invert w-round"></div>
-                        <div className="control-width-of-the-button-copy">
-                            <a data-w-id="5a5537f0-643c-0793-11e8-339274a5209f" href="#" className="second_button w-inline-block">
-                                <div className="wrap-button_text">
-                                    <div className="button_text">Read reviews</div>
-                                    <div className="button_text hide-mobile">Read reviews</div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <ReviewSlider />
         </div>
         
-    </div>
     );
 }
